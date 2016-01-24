@@ -1,4 +1,4 @@
-package com.junglefk.papa;
+package com.jungle;
 
 import java.io.IOException;
 
