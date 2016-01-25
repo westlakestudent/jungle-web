@@ -64,6 +64,4 @@
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 
-	<!-- aop -->
-	<aop:aspectj-autoproxy proxy-target-class="true" />
 </beans>

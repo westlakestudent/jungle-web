@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration >
+ <classPathEntry
+        location="G:/develop/maven/projects/jungle-web/mybatis/mysql-connector-java-5.1.38-bin.jar" />
+    <context id="common" targetRuntime="MyBatis3">
+        <commentGenerator>
+            <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+            <property name="suppressAllComments" value="true" />
+        </commentGenerator>
+        <!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+            connectionURL="jdbc:mysql://127.0.0.1/spider_db" userId="root"
+            password="root" />
+        <!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer true，把JDBC DECIMAL 和 
+            NUMERIC 类型解析为java.math.BigDecimal -->
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+        <!-- model存放目录 -->
+        <javaModelGenerator targetPackage="com.jungle.model"
+            targetProject="jungle-web" />
+        <!-- mapper xml存放目录 -->
+	<sqlMapGenerator targetPackage="com.jungle.model"
+		targetProject="jungle-web" />
+        <!-- mapper接口存放目录 -->
+        <javaClientGenerator targetPackage="com.jungle.mapper"
+            targetProject="jungle-web" type="XMLMAPPER" />
+        <!-- 配置不生成Exmaple文件 -->
+        <table schema="jungle_joke" tableName="joke" domainObjectName="Joke"
+            enableCountByExample="false" enableUpdateByExample="false"
+            enableDeleteByExample="false" enableSelectByExample="false"
+            selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()" />
+        </table>
+    </context>
+</generatorConfiguration>
